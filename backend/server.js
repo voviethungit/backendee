@@ -16,7 +16,10 @@ if (process.env.NODE_ENV !== "PRODUCTION") {
 
 // connect db
 connectDatabase();
-
+console.log("Environment Variables:");
+console.log(`DB_URL: ${process.env.DB_URL}`);
+console.log(`PORT: ${process.env.PORT}`);
+console.log(`NODE_ENV: ${process.env.NODE_ENV}`);
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_NAME,
   api_key: process.env.CLOUDINARY_API_KEY,
