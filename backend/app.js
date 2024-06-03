@@ -6,7 +6,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 
 app.use(cors({
-  origin: ['https://test-deploy-client-psi.vercel.app/',],
+  origin: 'https://test-deploy-client-psi.vercel.app',
   credentials: true
 }));
 
