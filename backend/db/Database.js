@@ -1,7 +1,12 @@
 const mongoose = require("mongoose");
 
 const connectDatabase = () => {
-  mongoose.connect(process.env.DB_URL, {
+  const dbUrl = process.env.DB_URL;
+  if (!dbUrl) {
+    throw new Error("DB_URL environment variable is not defined");
+  }
+  
+  mongoose.connect(dbUrl, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   }).then((data) => {
